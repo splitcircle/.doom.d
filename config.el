@@ -24,6 +24,8 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 (setq doom-font (font-spec :family "Input Mono" :size 20))
 
+(setq treemacs-position 'right)
+
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-doc-face :slant italic))

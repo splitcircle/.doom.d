@@ -1,3 +1,6 @@
+#+TITLE: Config
+
+#+BEGIN_SRC emacs-lisp
 (load! "+org")
 (setq user-full-name "Chris Stillwaggon"
       user-mail-address "chriscallanjr@me.com")
@@ -31,3 +34,4 @@
   :n "C-j" #'evil-window-down
   :n "C-k" #'evil-window-up
   :n "C-l" #'evil-window-right)
+#+END_SRC

@@ -5,6 +5,8 @@
 (setq org-directory "~/Dropdox/org")
 ;; set todo
 (setq +todo-file "~/Dropbox/org/todo.org")
+(setq +prep-file "~/Dropbox/org/prep.org")
+(setq +work-file "~/dev/wwd/be/work-notes.org")
 
 ;; set agenda path
 (setq org-agenda-files (list org-directory))
@@ -23,3 +25,21 @@
 (map!
  :leader
  :desc "Open todo file" "O" #'+open-todo-file)
+
+(defun +open-prep-file ()
+  (interactive)
+  "Opens prep file"
+  (find-file +prep-file))
+
+(map!
+ :leader
+ :desc "Open prep file" "P" #'+open-prep-file)
+
+(defun +open-work-file ()
+  (interactive)
+  (display-buffer-in-side-window (find-file-noselect +work-file)
+                                 '((side . right))))
+
+(map!
+ :leader
+ :desc "Open work notes" "o w" #'+open-work-file)

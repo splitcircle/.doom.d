@@ -1,18 +1,18 @@
 (load! "+org")
+
 (setq user-full-name "Chris Stillwaggon"
       user-mail-address "chriscallanjr@me.com")
+
 (setq doom-font (font-spec :family "Input Mono" :size 16))
-
-(setq treemacs-position 'right)
-
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-doc-face :slant italic))
 
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(setq treemacs-position 'right)
+
 (setq doom-theme 'doom-flatwhite)
 
-(setq display-line-numbers-type 'relative)
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
 (setq evil-vsplit-window-right t
       evil-split-window-below t)
@@ -23,6 +23,7 @@
 
 (setq +ivy-buffer-preview t)
 
+(setq display-line-numbers-type 'relative)
 
 (setq which-key-idle-delay 0.5)
 

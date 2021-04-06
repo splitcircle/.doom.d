@@ -1,21 +1,37 @@
-#+TITLE: Config
+#+TITLE: doom emacs literate config
 
-#+BEGIN_SRC emacs-lisp
+*** add custom org-mode module
+#+begin_src emacs-lisp
 (load! "+org")
+#+end_src
+
+*** set full name and email
+#+begin_src emacs-lisp
 (setq user-full-name "Chris Stillwaggon"
       user-mail-address "chriscallanjr@me.com")
+#+end_src
+
+*** font
+#+begin_src emacs-lisp
 (setq doom-font (font-spec :family "Input Mono" :size 16))
-
-(setq treemacs-position 'right)
-
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-doc-face :slant italic))
+#+end_src
 
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+*** treemacs
+#+begin_src emacs-lisp
+(setq treemacs-position 'right)
+#+end_src
+
+*** theme
+#+begin_src emacs-lisp
 (setq doom-theme 'doom-flatwhite)
+#+end_src
 
-(setq display-line-numbers-type 'relative)
+*** windows
+#+begin_src emacs-lisp
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
 (setq evil-vsplit-window-right t
       evil-split-window-below t)
@@ -25,13 +41,20 @@
   (+ivy/switch-buffer))
 
 (setq +ivy-buffer-preview t)
+#+end_src
 
+*** misc.
+#+begin_src emacs-lisp
+(setq display-line-numbers-type 'relative)
 
 (setq which-key-idle-delay 0.5)
+#+end_src
 
+*** keybinds
+#+begin_src emacs-lisp
 (map!
   :n "C-h" #'evil-window-left
   :n "C-j" #'evil-window-down
   :n "C-k" #'evil-window-up
   :n "C-l" #'evil-window-right)
-#+END_SRC
+#+end_src

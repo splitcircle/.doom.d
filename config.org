@@ -8,7 +8,7 @@
 
 * font
 #+begin_src emacs-lisp
-(setq doom-font (font-spec :family "Input Mono" :size 16))
+(setq doom-font (font-spec :family "Comic Mono" :size 16))
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-doc-face :slant italic))
@@ -21,7 +21,7 @@
 
 * theme
 #+begin_src emacs-lisp
-(setq doom-theme 'doom-opera-light)
+(setq doom-theme 'doom-fairy-floss)
 #+end_src
 
 * windows
@@ -34,6 +34,7 @@
 (defadvice! prompt-for-buffer (&rest _)
   :after '(evil-window-split evil-window-vsplit)
   (+ivy/switch-buffer))
+  ;; (consult-buffer))
 
 (setq +ivy-buffer-preview t)
 #+end_src
@@ -41,6 +42,16 @@
 ** maximize window on start
 #+begin_src emacs-lisp
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+#+end_src
+
+* flycheck
+#+begin_src emacs-lisp
+;; Disable default fringe styling
+(setq +vc-gutter-default-style nil)
+;; Make sure the margin is visible to begin with
+(setq-default left-margin-width 1)
+;; Move flycheck to left margin
+(setq-default flycheck-indication-mode 'left-margin)
 #+end_src
 
 * misc.
@@ -112,4 +123,8 @@
 (map!
  :leader
  :desc "Open work notes" "o w" #'+open-work-file)
+#+end_src
+** org-jira
+#+begin_src emacs-lisp
+(setq jiralib-url "https://wbdigital.atlassian.net")
 #+end_src

@@ -38,7 +38,7 @@
 (defun +open-work-file ()
   (interactive)
   (display-buffer-in-side-window (find-file-noselect +work-file)
-                                 '((side . right))))
+                                 '((side . left))))
 
 (map!
  :leader
